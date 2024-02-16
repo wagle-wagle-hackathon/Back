@@ -21,7 +21,7 @@ import umc.beanstalk.question.service.QuestionQueryService;
 @RestController
 @RequiredArgsConstructor
 @Validated
-@RequestMapping("/api/questions")
+@RequestMapping("/questions")
 public class QuestionController {
 	private final QuestionQueryService questionQueryService;
 	@GetMapping("")
