@@ -18,6 +18,13 @@ public class ResponseResultDto {
         private List<String> answerList;
     }
 
+    @Getter
+    @Builder
+    public static class GetTotalResult{
+        List<String> advices;
+        String name;
+    }
+
 }
 
 
