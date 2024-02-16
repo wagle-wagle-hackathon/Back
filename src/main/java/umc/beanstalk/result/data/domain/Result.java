@@ -3,10 +3,8 @@ package umc.beanstalk.result.data.domain;
 import lombok.*;
 import umc.beanstalk.result.data.dto.RequestResultDto;
 import umc.beanstalk.user.data.domain.User;
-import umc.beanstalk.user.data.domain.User;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -26,12 +24,13 @@ public class Result {
     @Column
     private Integer age;
     @Column
-    private Boolean gender;
+    private Integer gender;
     @Column
     private String image;
 
-    public Result toEntity(RequestResultDto dto) {
+    public static Result toEntity(RequestResultDto dto, User user) {
         return Result.builder()
+                .user(user)
                 .name(dto.getName())
                 .age(dto.getAge())
                 .gender(dto.getGender())
