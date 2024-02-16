@@ -25,4 +25,7 @@ public class UserService {
         User target = userRepository.findById(userId).orElseThrow(()->new GeneralException(ErrorStatus._NOT_FOUND));
         return fromDto(target);
     }
+    public User getUserById(Long userId){
+        return userRepository.findById(userId).orElseThrow(()->new GeneralException(ErrorStatus._NOT_FOUND));
+    }
 }
