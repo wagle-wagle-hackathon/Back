@@ -26,6 +26,8 @@ public class Choice {
 
 	private String cText;
 
+	private Integer gender; //0남자 1여자
+
 	@ManyToOne
 	@JoinColumn(name = "question_id")
 	private Question question;

@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 
 
-interface QuestionCommandService {
+public interface QuestionCommandService {
 }
