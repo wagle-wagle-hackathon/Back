@@ -1,4 +1,4 @@
-package umc.beanstalk.Question.data.domain;
+package umc.beanstalk.question.data.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
