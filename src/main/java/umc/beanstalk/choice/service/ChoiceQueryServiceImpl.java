@@ -10,9 +10,11 @@ import umc.beanstalk.choice.data.domain.Choice;
 import umc.beanstalk.choice.data.dto.ChoiceResponse;
 import umc.beanstalk.choice.repository.ChoiceRepository;
 import umc.beanstalk.common.apiPayload.code.status.ErrorStatus;
+import umc.beanstalk.common.apiPayload.exception.GeneralException;
 import umc.beanstalk.common.apiPayload.exception.handler.ChoiceHandler;
 import umc.beanstalk.question.data.domain.Question;
 import umc.beanstalk.question.data.dto.QuestionResponse;
+import umc.beanstalk.user.data.domain.User;
 
 @Service
 @RequiredArgsConstructor
@@ -28,5 +30,11 @@ public class ChoiceQueryServiceImpl implements ChoiceQueryService {
 				.choiceId(choice.getChoiceId())
 				.cText(choice.getCText())
 				.build()).collect(Collectors.toList());
+	}
+
+	@Override
+	public List<Choice> getChoicesByUserAndResultId(User user, Long resultId) {
+
+		return choiceRepository.findAllByUserIdAndResultId(user.getId(), resultId).orElseThrow(()->new GeneralException(ErrorStatus._NOT_FOUND));
 	}
 }

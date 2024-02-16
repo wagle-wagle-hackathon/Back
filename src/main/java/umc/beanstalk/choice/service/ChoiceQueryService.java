@@ -6,7 +6,10 @@ import umc.beanstalk.choice.data.domain.Choice;
 import umc.beanstalk.choice.data.dto.ChoiceResponse;
 import umc.beanstalk.question.data.domain.Question;
 import umc.beanstalk.question.data.dto.QuestionResponse;
+import umc.beanstalk.user.data.domain.User;
 
 public interface ChoiceQueryService {
 	public List<QuestionResponse.GetChoiceRes> getChoicesByQuestionGender(Question question, Integer gender);
+
+	public List<Choice> getChoicesByUserAndResultId(User user, Long resultId);
 }

@@ -28,8 +28,6 @@ public class Result {
     @Column
     private Boolean gender;
     @Column
-    private String text;
-    @Column
     private String image;
 
     public Result toEntity(RequestResultDto dto) {

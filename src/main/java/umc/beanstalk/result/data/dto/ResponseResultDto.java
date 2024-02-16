@@ -14,10 +14,10 @@ public class ResponseResultDto {
     @AllArgsConstructor
     public static class TotalInfo {
         private String name;
-        private String answer;
         private String image;
-        private List<String> fakeList;
+        private List<String> answerList;
     }
+
 }
 
 
