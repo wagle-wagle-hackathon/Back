@@ -31,7 +31,10 @@ public class ResultController {
     private ApiResult<?> postResult(@RequestBody RequestResultDto request){
 
         Result result = resultService.postResult(request);
-        return ApiResult.onSuccess(ResponseResultDto.toDTO(result));
+        return ApiResult.onSuccess(ResponseResultDto.ResultIdDto.builder()
+            .resultId(result.getId())
+            .build()
+        );
     }
 
 }
