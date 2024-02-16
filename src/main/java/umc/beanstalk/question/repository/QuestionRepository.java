@@ -1,8 +1,8 @@
-package umc.beanstalk.Question.repository;
+package umc.beanstalk.question.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import umc.beanstalk.Question.data.domain.Question;
+import umc.beanstalk.question.data.domain.Question;
 
 interface QuestionRepository extends JpaRepository<Question, Long> {
 }
