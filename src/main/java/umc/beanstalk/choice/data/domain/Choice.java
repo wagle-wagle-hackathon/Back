@@ -28,6 +28,8 @@ public class Choice {
 
 	private Integer gender; //0남자 1여자
 
+	private String advice;
+
 	@ManyToOne
 	@JoinColumn(name = "question_id")
 	private Question question;
