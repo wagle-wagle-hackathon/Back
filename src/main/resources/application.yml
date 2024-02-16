@@ -34,3 +34,6 @@ cloud:
       accessKey: ${AWS_ACCESS_KEY}
       secretKey: ${AWS_SECRET_ACCESS_KEY}
 
+cors:
+  allow-origin:
+    urls: "*"
