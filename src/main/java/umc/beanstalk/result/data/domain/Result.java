@@ -1,8 +1,7 @@
 package umc.beanstalk.result.data.domain;
 
 import lombok.*;
-import umc.beanstalk.result.data.dto.ResponseResultDto;
-import umc.beanstalk.user.data.entity.User;
+import umc.beanstalk.user.data.domain.User;
 
 import javax.persistence.*;
 

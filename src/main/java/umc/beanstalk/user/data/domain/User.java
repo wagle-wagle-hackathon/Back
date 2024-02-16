@@ -1,10 +1,7 @@
 package umc.beanstalk.user.data.domain;
 
 import lombok.*;
-import org.apache.catalina.connector.Request;
-import umc.beanstalk.result.data.entity.Result;
-import umc.beanstalk.user.data.dto.RequestUserDto;
-import umc.beanstalk.user.data.dto.ResponseUserDto;
+
 
 import javax.persistence.*;
 
