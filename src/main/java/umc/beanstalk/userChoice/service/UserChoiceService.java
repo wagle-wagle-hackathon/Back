@@ -12,7 +12,10 @@ import umc.beanstalk.result.repository.ResultRepository;
 import umc.beanstalk.userChoice.data.UserChoiceConverter;
 import umc.beanstalk.userChoice.data.domain.UserChoice;
 import umc.beanstalk.userChoice.data.dto.UserChoiceReqDto;
+import umc.beanstalk.userChoice.data.dto.UserChoiceResDto;
 import umc.beanstalk.userChoice.repository.UserChoiceRepository;
+
+import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
@@ -32,6 +35,14 @@ public class UserChoiceService {
         UserChoice newUserChoice = UserChoiceConverter.toUserChoiceEntity(result,choice);
 
         return userChoiceRepository.save(newUserChoice);
+    }
+
+    public List<UserChoiceResDto.UserChoiceInfo> getUserChoice(Long resultId){
+
+        Result result = resultRepository.findById(resultId).orElseThrow(()->new GeneralException(ErrorStatus._BAD_REQUEST));
+        List<UserChoice> userChoiceList = userChoiceRepository.findAllByResult(result);
+
+        return userChoiceList.stream().map(UserChoiceConverter::toUserChoiceDto).toList();
     }
 
 }
