@@ -21,16 +21,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ResultService {
     private final UserService userService;
-    private final UserChoiceService userChoiceService;
     private final ResultRepository resultRepository;
     private final ChoiceQueryService choiceQueryService;
 
 
-    public List<String> getTotalResult(Long userId, Long resultId){
-
+    public ResponseResultDto.GetTotalResult getTotalResult(Long userId, Long resultId){
         User user = userService.getUserById(userId);
+        Result result = resultRepository.findById(resultId).orElseThrow(()->new GeneralException(ErrorStatus._NOT_FOUND));
         List<Choice> choices = choiceQueryService.getChoicesByUserAndResultId(user, resultId);
-        return choices.stream().map(Choice::getAdvice).toList();
+        return ResponseResultDto.GetTotalResult.builder()
+            .advices(choices.stream().map(Choice::getAdvice).toList())
+            .name(result.getName())
+            .build();
     }
 
 }
