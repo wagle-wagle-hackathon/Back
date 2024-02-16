@@ -34,6 +34,7 @@ public class ResultService {
             .build();
     }
 
+    
     public Result postResult(RequestResultDto request){
 
         User user = userService.getUserById(request.getUserId());
