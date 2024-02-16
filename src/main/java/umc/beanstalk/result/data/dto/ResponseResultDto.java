@@ -1,22 +1,17 @@
 package umc.beanstalk.result.data.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import umc.beanstalk.result.data.domain.Result;
 
-import java.util.List;
-
-
+@Getter
+@Builder
 public class ResponseResultDto {
-
-    @Getter
-    @Builder
-    @AllArgsConstructor
-    public static class TotalInfo {
-        private String name;
-        private String image;
-        private List<String> answerList;
+    Long resultId;
+    public static ResponseResultDto toDTO(Result entity) {
+        return ResponseResultDto.builder().resultId(entity.getId()).build();
     }
+
 
     @Getter
     @Builder

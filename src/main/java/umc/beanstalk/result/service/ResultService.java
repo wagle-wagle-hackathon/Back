@@ -4,16 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import umc.beanstalk.choice.data.domain.Choice;
 import umc.beanstalk.choice.service.ChoiceQueryService;
-import umc.beanstalk.common.apiPayload.code.status.ErrorStatus;
-import umc.beanstalk.common.apiPayload.exception.GeneralException;
-import umc.beanstalk.result.data.ResultConverter;
 import umc.beanstalk.result.data.domain.Result;
-import umc.beanstalk.result.data.dto.ResponseResultDto;
+import umc.beanstalk.result.data.dto.RequestResultDto;
 import umc.beanstalk.result.repository.ResultRepository;
 import umc.beanstalk.user.data.domain.User;
 import umc.beanstalk.user.service.UserService;
-import umc.beanstalk.userChoice.data.dto.UserChoiceResDto;
-import umc.beanstalk.userChoice.service.UserChoiceService;
 
 import java.util.List;
 
@@ -26,6 +21,7 @@ public class ResultService {
 
 
     public ResponseResultDto.GetTotalResult getTotalResult(Long userId, Long resultId){
+
         User user = userService.getUserById(userId);
         Result result = resultRepository.findById(resultId).orElseThrow(()->new GeneralException(ErrorStatus._NOT_FOUND));
         List<Choice> choices = choiceQueryService.getChoicesByUserAndResultId(user, resultId);
@@ -33,6 +29,14 @@ public class ResultService {
             .advices(choices.stream().map(Choice::getAdvice).toList())
             .name(result.getName())
             .build();
+    }
+
+    public Result postResult(RequestResultDto request){
+
+        User user = userService.getUserById(request.getUserId());
+        Result result = Result.toEntity(request,user);
+
+        return resultRepository.save(result);
     }
 
 }
