@@ -1,9 +1,12 @@
 package umc.beanstalk.result.data.domain;
 
 import lombok.*;
+import umc.beanstalk.result.data.dto.RequestResultDto;
+import umc.beanstalk.user.data.domain.User;
 import umc.beanstalk.user.data.domain.User;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -16,7 +19,7 @@ public class Result {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 id 자동 생성
     private Long id;
     @ManyToOne
-    @JoinColumn(name="UserId")
+    @JoinColumn(name="user_id")
     private User user;
     @Column
     private String name;
@@ -28,10 +31,12 @@ public class Result {
     private String text;
     @Column
     private String image;
-/*
-    public ResponseResultDto toDto() {
-        return new ResponseResultDto(name, age, text, image);
-    }
 
- */
+    public Result toEntity(RequestResultDto dto) {
+        return Result.builder()
+                .name(dto.getName())
+                .age(dto.getAge())
+                .gender(dto.getGender())
+                .build();
+    }
 }

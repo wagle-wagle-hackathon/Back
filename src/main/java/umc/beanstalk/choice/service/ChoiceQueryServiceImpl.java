@@ -21,7 +21,7 @@ public class ChoiceQueryServiceImpl implements ChoiceQueryService {
 	@Override
 	public List<QuestionResponse.GetChoiceRes> getChoicesByQuestionGender(Question question, Integer gender) {
 		List<Choice> choices = choiceRepository.findAllByQuestionAndGender(question, gender)
-			.orElseThrow(() -> new ChoiceHandler(ErrorStatus.CHOICE_NOT_FOUND));
+			.orElseThrow(() -> new ChoiceHandler(ErrorStatus._NOT_FOUND));
 
 		return choices.stream().map(choice ->
 			QuestionResponse.GetChoiceRes.builder()

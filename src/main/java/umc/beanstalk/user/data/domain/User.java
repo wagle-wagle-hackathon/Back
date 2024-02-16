@@ -19,7 +19,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 id 자동 생성
     private Long id;
-    @Column()
+    @Column
     private String name;
     @Column
     private String year;
