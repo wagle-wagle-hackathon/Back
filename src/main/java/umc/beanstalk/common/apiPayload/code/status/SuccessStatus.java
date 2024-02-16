@@ -3,12 +3,12 @@ package umc.beanstalk.common.apiPayload.code.status;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
-import umc.study.apiPayload.code.BaseCode;
-import umc.study.apiPayload.code.ReasonDTO;
+import umc.beanstalk.common.apiPayload.code.BaseCode;
+import umc.beanstalk.common.apiPayload.code.ReasonDTO;
 
 @Getter
 @AllArgsConstructor
-public enum SuccessStatus implements BaseCode{
+public enum SuccessStatus implements BaseCode {
     // 일반적인 응답
     _OK(HttpStatus.OK, "COMMON200", "성공입니다.");
 
