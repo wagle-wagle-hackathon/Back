@@ -1,7 +1,10 @@
 package umc.beanstalk.user.data.domain;
 
 import lombok.*;
-
+import org.apache.catalina.connector.Request;
+import umc.beanstalk.result.data.domain.Result;
+import umc.beanstalk.user.data.dto.RequestUserDto;
+import umc.beanstalk.user.data.dto.ResponseUserDto;
 
 import javax.persistence.*;
 
@@ -15,18 +18,17 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 id 자동 생성
-    private Integer id;
-    @Column
+    private Long id;
+    @Column()
     private String name;
     @Column
     private String year;
-/*
-    public User from(RequestUserDto dto) {
+
+    public User toDto(RequestUserDto dto) {
         return User.builder()
                 .name(dto.getName())
                 .year(dto.getYear())
                 .build();
     }
 
- */
 }
