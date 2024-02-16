@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import umc.beanstalk.choice.data.domain.Choice;
 import umc.beanstalk.question.data.domain.Question;
-import umc.beanstalk.user.data.domain.User;
 
 public interface ChoiceRepository extends JpaRepository<Choice, Long> {
 	Optional<List<Choice>> findAllByQuestionAndGender(Question question, Integer gender);

@@ -4,8 +4,6 @@ import lombok.Builder;
 import lombok.Getter;
 import umc.beanstalk.user.data.domain.User;
 
-import javax.validation.constraints.NotBlank;
-
 @Getter
 @Builder
 public class RequestUserDto {

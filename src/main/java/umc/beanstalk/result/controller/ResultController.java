@@ -10,8 +10,6 @@ import umc.beanstalk.result.data.dto.RequestResultDto;
 import umc.beanstalk.result.data.dto.ResponseResultDto;
 import umc.beanstalk.result.service.ResultService;
 
-import java.util.List;
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("result")
