@@ -3,7 +3,6 @@ package umc.beanstalk.choice.service;
 import java.util.List;
 
 import umc.beanstalk.choice.data.domain.Choice;
-import umc.beanstalk.choice.data.dto.ChoiceResponse;
 import umc.beanstalk.question.data.domain.Question;
 import umc.beanstalk.question.data.dto.QuestionResponse;
 import umc.beanstalk.user.data.domain.User;
