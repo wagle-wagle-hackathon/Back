@@ -22,6 +22,4 @@ public class Question {
 	private Long questionId;
 
 	private String qText;
-
-	private int order;
 }
