@@ -1,10 +1,9 @@
-package umc.beanstalk.Question.service;
+package umc.beanstalk.question.service;
 
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 
-@Service
-@RequiredArgsConstructor
-public class QuestionQueryService {
+
+interface QuestionQueryService {
 }

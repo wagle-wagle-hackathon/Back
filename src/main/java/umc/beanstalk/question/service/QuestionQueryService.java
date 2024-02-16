@@ -1,7 +1,9 @@
 package umc.beanstalk.question.service;
 
-import umc.beanstalk.question.data.dto.QuestionResponse;
+import org.springframework.stereotype.Service;
 
-public interface QuestionQueryService {
-	public QuestionResponse.GetQuestionByNumRes getQuestionByNumRes(int qNum);
+import lombok.RequiredArgsConstructor;
+
+
+interface QuestionQueryService {
 }

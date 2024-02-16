@@ -1,4 +1,4 @@
-package umc.beanstalk.Question.controller;
+package umc.beanstalk.question.controller;
 
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -8,8 +8,5 @@ import umc.beanstalk.question.data.dto.QuestionResponse;
 @Service
 @RequiredArgsConstructor
 public class QuestionQueryServiceImpl implements QuestionQueryService{
-	@Override
-	public QuestionResponse.GetQuestionByNumRes getQuestionByNumRes(int qNum) {
-		return null;
-	}
+
 }

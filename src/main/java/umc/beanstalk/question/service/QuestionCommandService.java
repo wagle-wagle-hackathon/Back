@@ -1,4 +1,9 @@
 package umc.beanstalk.question.service;
 
-public interface QuestionCommandService {
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+
+
+interface QuestionCommandService {
 }
