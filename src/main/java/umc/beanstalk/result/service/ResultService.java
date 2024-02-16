@@ -16,13 +16,19 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ResultService {
     private final UserService userService;
-    private final ChoiceQueryService choiceQueryService;
     private final ResultRepository resultRepository;
-    public List<String> getTotalResult(Long userId, Long resultId){
+    private final ChoiceQueryService choiceQueryService;
+
+
+    public ResponseResultDto.GetTotalResult getTotalResult(Long userId, Long resultId){
 
         User user = userService.getUserById(userId);
+        Result result = resultRepository.findById(resultId).orElseThrow(()->new GeneralException(ErrorStatus._NOT_FOUND));
         List<Choice> choices = choiceQueryService.getChoicesByUserAndResultId(user, resultId);
-        return choices.stream().map(Choice::getAdvice).toList();
+        return ResponseResultDto.GetTotalResult.builder()
+            .advices(choices.stream().map(Choice::getAdvice).toList())
+            .name(result.getName())
+            .build();
     }
 
     public Result postResult(RequestResultDto request){

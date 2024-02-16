@@ -11,6 +11,15 @@ public class ResponseResultDto {
     public static ResponseResultDto toDTO(Result entity) {
         return ResponseResultDto.builder().resultId(entity.getId()).build();
     }
+
+
+    @Getter
+    @Builder
+    public static class GetTotalResult{
+        List<String> advices;
+        String name;
+    }
+
 }
 
 
