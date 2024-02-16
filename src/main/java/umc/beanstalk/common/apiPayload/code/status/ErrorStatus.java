@@ -14,27 +14,7 @@ public enum ErrorStatus implements BaseErrorCode {
     _BAD_REQUEST(HttpStatus.BAD_REQUEST,"COMMON400","잘못된 요청입니다."),
     _UNAUTHORIZED(HttpStatus.UNAUTHORIZED,"COMMON401","인증이 필요합니다."),
     _FORBIDDEN(HttpStatus.FORBIDDEN, "COMMON403", "금지된 요청입니다."),
-    // 멤버 관련 응답
-    MEMBER_NOT_FOUND(HttpStatus.BAD_REQUEST,"MEMBER4001","사용자가 없습니다."),
-    NICKNAME_NOT_EXIST(HttpStatus.BAD_REQUEST,"MEMBER4002", "닉네임은 필수 입니다."),
-    // 멤버 선호 음식
-    FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST,"PREFER4001","음식 카테고리가 없습니다."),
-    // 유저 미션
-    ACCEPT_MISSION_NOT_FOUND(HttpStatus.BAD_REQUEST,"USERMISSION4001","유저가 수락한 미션이 없습니다."),
-    //식당 관련 응답
-    STORE_NOT_FOUND(HttpStatus.BAD_REQUEST,"STORER4002","식당명은 필수 입니다."),
-    STORE_NOT_EXIST(HttpStatus.BAD_REQUEST,"STORE4001", "식당이 없습니다."),
-    // 지역 관련 응답
-    REGION_NOT_FOUND(HttpStatus.BAD_REQUEST,"REGION4001","해당 지역이 없습니다."),
-    //미션 관련 응답
-    MISSION_NOT_EXIST(HttpStatus.BAD_REQUEST,"MISSION4001", "미션이 없습니다."),
-    Mission_Already_Accept(HttpStatus.BAD_REQUEST,"MISSION4002", "이미 수락한 미션입니다."),
-    MISSION_COMPLETE(HttpStatus.BAD_REQUEST,"MISSION4003", "이미 완료한 미션입니다."),
-    //페이지 관련
-    PAGE_NOT_FOUND(HttpStatus.BAD_REQUEST,"PAGE4001","해당 페이지가 없습니다."),
-    // 예시 ...
-    ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
-    TEMP_EXCEPTION(HttpStatus.BAD_REQUEST,"TEMP40001","이거는 테스트");
+    _NOT_FOUND(HttpStatus.NOT_FOUND, "COMMON404", "찾을 수 없습니다.");
 
     private final HttpStatus httpStatus;
     private final String code;

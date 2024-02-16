@@ -22,8 +22,6 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public ApiResult<?> login(@PathVariable Long userId){
-        // 서비스에 위임
-
         // 결과 응답
         return ApiResult.onSuccess(userService.login(userId));
     }
