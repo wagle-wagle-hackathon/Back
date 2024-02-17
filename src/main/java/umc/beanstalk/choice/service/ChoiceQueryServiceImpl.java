@@ -33,8 +33,8 @@ public class ChoiceQueryServiceImpl implements ChoiceQueryService {
 	}
 
 	@Override
-	public List<Choice> getChoicesByUserAndResultId(User user, Long resultId) {
+	public List<String> getChoiceAdivcesByUserAndResultId(User user, Long resultId) {
 
-		return choiceRepository.findAllByUserIdAndResultId(user.getId(), resultId).orElseThrow(()->new GeneralException(ErrorStatus._NOT_FOUND));
+		return choiceRepository.findAllAdicesByUserIdAndResultId(user.getId(), resultId).orElseThrow(()->new GeneralException(ErrorStatus._NOT_FOUND));
 	}
 }
