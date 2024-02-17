@@ -10,5 +10,5 @@ import umc.beanstalk.user.data.domain.User;
 public interface ChoiceQueryService {
 	public List<QuestionResponse.GetChoiceRes> getChoicesByQuestionGender(Question question, Integer gender);
 
-	public List<Choice> getChoicesByUserAndResultId(User user, Long resultId);
+	public List<String> getChoiceAdivcesByUserAndResultId(User user, Long resultId);
 }

@@ -27,9 +27,9 @@ public class ResultService {
 
         User user = userService.getUserById(userId);
         Result result = resultRepository.findById(resultId).orElseThrow(()->new GeneralException(ErrorStatus._NOT_FOUND));
-        List<Choice> choices = choiceQueryService.getChoicesByUserAndResultId(user, resultId);
+        List<String> advices = choiceQueryService.getChoiceAdivcesByUserAndResultId(user, resultId);
         return ResponseResultDto.GetTotalResult.builder()
-            .advices(choices.stream().map(Choice::getAdvice).toList())
+            .advices(advices)
             .name(result.getName())
             .build();
     }
